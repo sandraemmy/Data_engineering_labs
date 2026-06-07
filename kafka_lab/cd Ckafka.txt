@@ -1,0 +1,17 @@
+cd C:kafka
+bin\windows\kafka-server-start.bat config\server.properties
+
+cd C:kafka
+bin\windows\kafka-topics.bat --create --topic demo-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+cd C:\kafka
+ bin\windows\kafka-topics.bat --create --topic group-demo --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+
+cd C:\kafka
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic group-demo --group my-demo-group
+
+cd C:\kafka
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic group-demo --group my-demo-group
+
+cd C:\kafka
+.\bin\windows\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic group-demo
