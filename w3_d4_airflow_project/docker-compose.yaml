@@ -1,0 +1,14 @@
+services:
+  airflow-devoir:
+    image: apache/airflow:2.7.1
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./data:/opt/airflow/data
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    command: standalone
+
+# docker exec airflow_project-airflow-devoir-1 cat /opt/airflow/standalone_admin_password.txt
+##W9NQAKmvRatSeZvd mot de passe: admin
